@@ -18,13 +18,18 @@ public class Valuta {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		if(naziv!=null)
 		this.naziv = naziv;
+		throw new RuntimeException("Greska");
 	}
 	public String getSkraceno() {
 		return skraceno;
 	}
 	public void setSkraceno(String skraceno) {
+		if(skraceno!=null && skraceno.length()<=3)
 		this.skraceno = skraceno;
+		throw new RuntimeException("Greska");
+		
 	}
 	public GregorianCalendar getDatum() {
 		return datum;
@@ -36,19 +41,25 @@ public class Valuta {
 		return prodajni;
 	}
 	public void setProdajni(double prodajni) {
+		if(prodajni>0)
 		this.prodajni = prodajni;
+		throw new RuntimeException("Greska");
 	}
 	public double getKupovni() {
 		return kupovni;
 	}
 	public void setKupovni(double kupovni) {
+		if(kupovni>0)
 		this.kupovni = kupovni;
+		throw new RuntimeException("Greska");
 	}
 	public double getSrednji() {
 		return srednji;
 	}
 	public void setSrednji(double srednji) {
+		if(srednji>0)
 		this.srednji = srednji;
+		throw new RuntimeException("Greska");
 	}
 	@Override
 	public int hashCode() {
