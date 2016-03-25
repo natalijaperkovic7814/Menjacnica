@@ -9,7 +9,7 @@ public interface SpecifikacijaInterfejsa {
 	
 	public void brisanjeKursa(Valuta v);
 	
-	public double nalazenjeKursa(Valuta v);
+	public Object nalazenjeKursa(Valuta v);
 	
 	
 }
