@@ -10,22 +10,21 @@ public class ImplementacijaInterfejsa implements SpecifikacijaInterfejsa {
 	
 	public void dodavanjeKursa (Valuta v) {
 
-		if(valute==null || v==null){
-			valute.add(v);
-		}
-		for(int i=0;i<valute.size();i++){
-			if(!(v.equals(valute.get(i)))){
+		if( v!=null){
+			if(!(valute.contains(v))){
 				valute.add(v);
 			}
-		}
+	}else
+		throw new RuntimeException("Greska");
 	}
 
 	
 	public void brisanjeKursa(Valuta v) {
 		
-		if(valute==null || v==null){
-			throw new RuntimeException("Lista je prazna");
+		if( v==null || valute.isEmpty()){
+			throw new RuntimeException("Greska");
 		}
+		
 		
 		for(int i=0;i<valute.size();i++){
 			if(valute.get(i).equals(v)){
@@ -40,18 +39,18 @@ public class ImplementacijaInterfejsa implements SpecifikacijaInterfejsa {
 
 	public Object nalazenjeKursa(Valuta v) {
 		
-		if(v==null || valute==null){
+		if(v==null || valute.isEmpty()){
 			throw new RuntimeException("Greska");
 		}
 		
-		Valuta va=new Valuta();
+		
 		for(int i=0;i<valute.size();i++)
 			if(valute.get(i).equals(v))
-				va=v;
+				return v;
 			
 		
 		
-		return va;
+		return null;
 	}
 
 }
